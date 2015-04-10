@@ -1,0 +1,33 @@
+{
+  "name": "Memrise Font Changer",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension lets you change the font used on Memrise.",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "browser action demo",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "permissions": [
+    "*://www.memrise.com/*",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.memrise.com/*"
+      ],
+      "js": [
+        "js/jquery.js",
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
